@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @book_detail.id %>
+</p>
+
+<p>
+  <strong>Book title:</strong>
+  <%= @book_detail.book_title %>
+</p>
+
+<p>
+  <strong>Publication year:</strong>
+  <%= @book_detail.publication_year %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @book_detail.language %>
+</p>
+
+<p>
+  <strong>Category type:</strong>
+  <%= @book_detail.category_type %>
+</p>
+
+<p>
+  <strong>Binding:</strong>
+  <%= @book_detail.binding_id %>
+</p>
+
+<p>
+  <strong>No of copies stored:</strong>
+  <%= @book_detail.no_of_copies_stored %>
+</p>
+
+<p>
+  <strong>No of copies present:</strong>
+  <%= @book_detail.no_of_copies_present %>
+</p>
+
+<%= link_to 'Edit', edit_book_detail_path(@book_detail) %> |
+<%= link_to 'Back', book_details_path %>

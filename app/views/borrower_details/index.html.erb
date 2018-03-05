@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Borrower Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Borrower</th>
+      <th>Book</th>
+      <th>Borrowed from</th>
+      <th>Borrowed to</th>
+      <th>Actual return date</th>
+      <th>Issued by</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @borrower_details.each do |borrower_detail| %>
+      <tr>
+        <td><%= borrower_detail.borrower_id %></td>
+        <td><%= borrower_detail.book_id %></td>
+        <td><%= borrower_detail.borrowed_from %></td>
+        <td><%= borrower_detail.borrowed_to %></td>
+        <td><%= borrower_detail.actual_return_date %></td>
+        <td><%= borrower_detail.issued_by %></td>
+        <td><%= link_to 'Show', borrower_detail %></td>
+        <td><%= link_to 'Edit', edit_borrower_detail_path(borrower_detail) %></td>
+        <td><%= link_to 'Destroy', borrower_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Borrower Detail', new_borrower_detail_path %>

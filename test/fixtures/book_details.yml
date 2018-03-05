@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  book_id: 1
+  book_title: MyString
+  publication_year: 1
+  language: MyString
+  category_type: 1
+  binding_id: 1
+  no_of_copies_stored: 1
+  no_of_copies_present: 1
+
+two:
+  book_id: 1
+  book_title: MyString
+  publication_year: 1
+  language: MyString
+  category_type: 1
+  binding_id: 1
+  no_of_copies_stored: 1
+  no_of_copies_present: 1
