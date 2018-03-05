@@ -1,0 +1,2 @@
+module BindingDetailsHelper
+end

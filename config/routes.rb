@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :shelf_details
+  resources :binding_details
   resources :category_details
   resources :borrower_details
   resources :book_details

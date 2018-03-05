@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Binding Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @binding_details.each do |binding_detail| %>
+      <tr>
+        <td><%= binding_detail.name %></td>
+        <td><%= link_to 'Show', binding_detail %></td>
+        <td><%= link_to 'Edit', edit_binding_detail_path(binding_detail) %></td>
+        <td><%= link_to 'Destroy', binding_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Binding Detail', new_binding_detail_path %>

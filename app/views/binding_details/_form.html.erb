@@ -1,0 +1,22 @@
+<%= form_for(binding_detail) do |f| %>
+  <% if binding_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(binding_detail.errors.count, "error") %> prohibited this binding_detail from being saved:</h2>
+
+      <ul>
+      <% binding_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
