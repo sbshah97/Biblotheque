@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :category_details
   resources :borrower_details
   resources :book_details
   resources :ideas
