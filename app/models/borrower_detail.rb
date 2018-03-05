@@ -1,0 +1,2 @@
+class BorrowerDetail < ApplicationRecord
+end
