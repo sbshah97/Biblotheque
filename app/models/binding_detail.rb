@@ -1,2 +1,0 @@
-class BindingDetail < ApplicationRecord
-end

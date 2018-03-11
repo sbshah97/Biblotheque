@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  book_id: 1
+  chk_out_dt: 2015-09-25 19:32:47
+  chk_in_date: 2015-09-25 19:32:47
+  user_id: 1
+
+two:
+  book_id: 1
+  chk_out_dt: 2015-09-25 19:32:47
+  chk_in_date: 2015-09-25 19:32:47
+  user_id: 1

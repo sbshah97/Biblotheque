@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,64 +11,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305135254) do
+ActiveRecord::Schema.define(version: 20150926194133) do
 
-  create_table "binding_details", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "book_details", force: :cascade do |t|
-    t.string   "book_title"
-    t.integer  "publication_year"
-    t.string   "language"
-    t.integer  "category_type"
-    t.integer  "binding_id"
-    t.integer  "no_of_copies_stored"
-    t.integer  "no_of_copies_present"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-  end
-
-  create_table "borrower_details", force: :cascade do |t|
-    t.integer  "borrower_id"
+  create_table "book_histories", force: :cascade do |t|
     t.integer  "book_id"
-    t.datetime "borrowed_from"
-    t.datetime "borrowed_to"
-    t.datetime "actual_return_date"
-    t.integer  "issued_by"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.integer  "user_id"
+    t.datetime "chk_out_dt"
+    t.datetime "chk_in_date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  create_table "category_details", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  add_index "book_histories", ["book_id"], name: "index_book_histories_on_book_id"
+  add_index "book_histories", ["user_id"], name: "index_book_histories_on_user_id"
+
+  create_table "books", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "author"
+    t.string   "isbn"
+    t.boolean  "is_borrowed"
+    t.boolean  "is_deleted"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+    t.boolean  "is_requested"
+    t.integer  "requested_by"
   end
 
-  create_table "shelf_details", force: :cascade do |t|
-    t.text     "address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  add_index "books", ["user_id"], name: "index_books_on_user_id"
+
+  create_table "searches", force: :cascade do |t|
+    t.string   "isbn"
+    t.string   "title"
+    t.string   "description"
+    t.string   "author"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.string   "name"
+    t.string   "password_digest"
+    t.string   "email"
+    t.string   "address"
+    t.string   "phone"
+    t.boolean  "is_admin"
+    t.boolean  "is_deleted"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.boolean  "requested_by"
+    t.boolean  "super_admin"
   end
 
 end
