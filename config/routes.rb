@@ -10,11 +10,11 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-   get 'books/:id/borrow' => 'books#borrow', :as => :borrow_book
-   get 'book_histories/:data/index' => 'book_histories#index', :as =>:check_user_history
-   get 'books/:id/request' => 'books#request_book', :as => :request_book
-   get 'books/:id/return' => 'books#return', :as => :return_book
-   get 'books/:id/cancel_request' => 'books#cancel_request', :as => :cancel_request_book
+  get 'books/:id/borrow' => 'books#borrow', :as => :borrow_book
+  get 'book_histories/:data/index' => 'book_histories#index', :as =>:check_user_history
+  get 'books/:id/request' => 'books#request_book', :as => :request_book
+  get 'books/:id/return' => 'books#return', :as => :return_book
+  get 'books/:id/cancel_request' => 'books#cancel_request', :as => :cancel_request_book
   # post 'books/borrow[:book_id]'   =>  'searches#borrow'
   resources :searches
   resources :books
@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   match ':controller(/:action(/:id))', :via=> :get
 
+
+  get "/pages/:page" => "pages#show"
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
