@@ -11,17 +11,14 @@
     <div class="container">
       <nav>
         <% if logged_in? %>
+
         <ul class="nav navbar-nav navbar-left">
           <div style="margin: 8px 0px 0px 0px; float: left">
             <%= link_to "Home", home_path, class: "btn btn-primary", style: 'color: #fff'%>
           </div>
-          <div style="margin: 15px 0px 0px 20px; float: left">
-            <li style="color: #ffffff; font-size: 14px"> Welcome, <%=@current_user.name %>! </li>
-          </div>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #ffffff">
+              Options
               <b class="caret" style="border-top:9px solid #ffffff"></b>
             </a>
             <ul class="dropdown-menu">
@@ -32,6 +29,13 @@
             </ul>
           </li>
         </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <div style="margin: 15px 0px 0px 20px; float: left">
+            <li style="color: #ffffff; font-size: 14px"> Welcome, <%=@current_user.name %> to NITK Library! </li>
+          </div>
+        </ul>
+        
       <% end %>
       </nav>
     </div>
@@ -45,8 +49,8 @@
   </div>
   <br/>
   <br/>
-  <%= debug(params) if Rails.env.development? %>
-  <%= debug(session[:user_id]) if Rails.env.development? %>
+  <%# <%= debug(params) if Rails.env.development? %>
+  <%# <%= debug(session[:user_id]) if Rails.env.development? %> 
 
 </body>
 </html>

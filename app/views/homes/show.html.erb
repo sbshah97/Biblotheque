@@ -7,6 +7,7 @@
 	<%= link_to "Manage Books", books_path, class: "btn btn-xlg btn-info", style: "color: #fff"%>
 </div>
 <% end %>
+
 <div class="btn-group float_btn" role="group">
 	<%= link_to "Search Books", new_search_path, class: "btn btn-xlg btn-success" , style: "color: #fff"%> 
 </div>
@@ -16,4 +17,23 @@
 
 <div class="btn-group float_btn" role="group">
 	<%= link_to "My checkout history", check_user_history_path(:data => {:user_id => @current_user.id, :book_id => nil}), class: "btn btn-xlg btn-warning", style: "color: #fff"%>
+</div>
+
+<br>
+<br>
+<br>
+<div class="container">
+	<div class="row">
+	<div class="col-sm-6">
+		<p>
+			The NITK Library is housed in a spacious three-storied building adjoining the Main building of the Institute on the Southern side. The library, with a floor area of 2,758 Sq mtrs., is segregated into two wings. Periodicals, journals and bound volumes are accessible in the Western wing, while books are housed in the Eastern wing. Three reading halls which can accommodate a total of 600 students provides the peaceful and friendly atmosphere for absorbing the knowledge available through books.
+		</p>
+		<p>
+			A computer terminal provided at the counter near the entrance can be used to gain information regarding status of availability and particulars of any book. The in-house activities of the Library have been computerised using the LIBSYS software. A bar-coded system of issue and return of books is currently in use.
+		</p>
+	</div>
+	<div class="col-sm-6">
+		<img src="http://thenitklife.weebly.com/uploads/3/0/5/6/30562859/1437831_orig.jpg" class="img-responsive">
+	</div>
+	</div>
 </div>
