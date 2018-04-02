@@ -1,0 +1,45 @@
+<h1>New User</h1>
+<!--
+
+<script type="text/javascript">
+    $(function validateForm() {
+        var name = document.getElementById('name');
+        var email = document.getElementById('email');
+        if (name == null || name == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+        if (email == null || email == "") {
+            alert("Email must be filled out");
+            return false;
+        }
+        return true;
+    });
+
+</script>-->
+
+<%= form_for @user, :url => {:action =>'new_user'}, :html => {:method => "post"} do |f| %>
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name,  :input_html => {:id=>'name'} %>
+    </div>
+    <div class="field">
+      <%= f.label :password %><br>
+      <%= f.password_field :password, :input_html => {:id=>'password'} %>
+    </div>
+    <div class=" input-group">
+      <%= f.label :email %><br>
+      <%= f.text_field :email, :input_html => {:id=>'email'} %>
+    </div>
+    <div class="field">
+      <%= f.label :address %><br>
+      <%= f.text_field :address %>
+    </div>
+    <div class="field">
+      <%= f.label :phone, "Phone Number" %><br>
+      <%= f.text_field :phone %>
+    </div>
+    <div class="actions">
+      <%= f.submit 'Submit', :class => 'btn btn-primary'%>
+    </div>
+<% end %>

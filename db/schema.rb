@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,64 +11,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305135254) do
+ActiveRecord::Schema.define(version: 20150926194133) do
 
-  create_table "binding_details", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "book_histories", force: :cascade do |t|
+    t.integer  "book_id",     limit: 4
+    t.integer  "user_id",     limit: 4
+    t.datetime "chk_out_dt"
+    t.datetime "chk_in_date"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
-  create_table "book_details", force: :cascade do |t|
-    t.string   "book_title"
-    t.integer  "publication_year"
-    t.string   "language"
-    t.integer  "category_type"
-    t.integer  "binding_id"
-    t.integer  "no_of_copies_stored"
-    t.integer  "no_of_copies_present"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+  add_index "book_histories", ["book_id"], name: "index_book_histories_on_book_id", using: :btree
+  add_index "book_histories", ["user_id"], name: "index_book_histories_on_user_id", using: :btree
+
+  create_table "books", force: :cascade do |t|
+    t.string   "title",        limit: 255
+    t.string   "description",  limit: 255
+    t.string   "author",       limit: 255
+    t.string   "isbn",         limit: 255
+    t.boolean  "is_borrowed",  limit: 1
+    t.boolean  "is_deleted",   limit: 1
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "user_id",      limit: 4
+    t.boolean  "is_requested", limit: 1
+    t.integer  "requested_by", limit: 4
   end
 
-  create_table "borrower_details", force: :cascade do |t|
-    t.integer  "borrower_id"
-    t.integer  "book_id"
-    t.datetime "borrowed_from"
-    t.datetime "borrowed_to"
-    t.datetime "actual_return_date"
-    t.integer  "issued_by"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-  end
+  add_index "books", ["user_id"], name: "index_books_on_user_id", using: :btree
 
-  create_table "category_details", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "shelf_details", force: :cascade do |t|
-    t.text     "address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "searches", force: :cascade do |t|
+    t.string   "isbn",        limit: 255
+    t.string   "title",       limit: 255
+    t.string   "description", limit: 255
+    t.string   "author",      limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.string   "name",            limit: 255
+    t.string   "password_digest", limit: 255
+    t.string   "email",           limit: 255
+    t.string   "address",         limit: 255
+    t.string   "phone",           limit: 255
+    t.boolean  "is_admin",        limit: 1
+    t.boolean  "is_deleted",      limit: 1
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "requested_by",    limit: 1
+    t.boolean  "super_admin",     limit: 1
   end
 
+  add_foreign_key "books", "users"
 end
