@@ -6,3 +6,10 @@ The purpose of this document is to provide a detailed documentation with respect
 
 ## Contributors
 * [Salman Shah](https://github.com/salman-bhai)
+
+## Installation
+* Please refer the Wiki on the Starter's Guide to see how to setup the repository.
+
+## License
+
+* Please see the terms and conditions of the LICENSE and its terms [here](LICENSE). 
