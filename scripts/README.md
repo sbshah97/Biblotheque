@@ -14,5 +14,7 @@ pip install -r requirements.txt
 
 * To run the code, you can run the following command:
 ```
-python login.py <option>
+python login.py --input[1|2|3|4] <option>
 ```
+
+The option argument can be given anything as of now!

@@ -5,11 +5,11 @@ require File.expand_path('../application', __FILE__)
 Rails.application.initialize!
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-   :address => "smtp.mandrillapp.com",
+   :address => "smtp.iris.nitk.ac.in",
    :port => 587,
-   :domain => "mandrillapp.com",
+   :domain => "library.nitk.ac.in",
    :authentication => :login,
-   :user_name => "vicky8rk@gmail.com",
-   :password => "yhoSePw3hCsK4IEFdE0FoA",
+   :user_name => "15it241.salman@nitk.edu.com",
+   :password => "salman@123",
    :enable_starttls_auto => true
 }

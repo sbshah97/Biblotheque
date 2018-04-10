@@ -10,6 +10,9 @@ The purpose of this document is to provide a detailed documentation with respect
 ## Installation
 * Please refer the Wiki on the Starter's Guide to see how to setup the repository.
 
+## Setting Up
+* After installing Rails make sure you use MySQL for the database. You can import the database manually.
+
 ## License
 
 * Please see the terms and conditions of the LICENSE and its terms [here](LICENSE). 

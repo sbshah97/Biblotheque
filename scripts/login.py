@@ -23,6 +23,7 @@ elif args.input4:
 	name = "salman@gmail.com"
 	pwd = "salman"
 else:
+	print("Please enter an argument")
 	exit(0)
 
 chromedriver = "./chromedriver"
@@ -32,10 +33,10 @@ browser.get('http://localhost:3000')
 
 # Getting Username to be filled
 username = browser.find_element_by_id("session_email")
-username.send_keys(email)
+username.send_keys(name)
 
 # Getting Password to be filled
 password = browser.find_element_by_id("session_password")
-password.send_keys(password)
+password.send_keys(pwd)
 
 browser.find_element_by_name("commit").click()
