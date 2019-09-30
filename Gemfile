@@ -12,7 +12,7 @@ gem 'rails', '4.2.2'
 # Use sqlite3 as the database for Active Record
 group :development do
   # Use Mysql gem
-  gem 'mysql2', '~> 0.3.18'
+  gem 'mysql2', '~> 0.5.2'
   gem 'sqlite3'
 end
 group :production do
