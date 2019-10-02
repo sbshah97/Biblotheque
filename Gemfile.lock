@@ -142,9 +142,8 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (2.7.2)
-      execjs (>= 0.3.0)
-      json (>= 1.8.0)
+    uglifier (4.2.0)
+      execjs (>= 0.3.0, < 3)
     validates_email_format_of (1.6.3)
       i18n
     web-console (2.2.1)
