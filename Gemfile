@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'will_paginate'
 
 gem 'validates_email_format_of'
-gem 'bcrypt', '3.1.15'
+gem 'bcrypt', '3.1.16'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'autoprefixer-rails'
 
